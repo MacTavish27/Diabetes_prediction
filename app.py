@@ -1,6 +1,7 @@
 from flask import Flask,request, url_for, redirect, render_template
 import pickle
 import pandas as pd
+import os
 
 app = Flask(__name__)
 
@@ -41,4 +42,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=False, use_reloader=False, port=os.environ.get('PORT', 5000))
